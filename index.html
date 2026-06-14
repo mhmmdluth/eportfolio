@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muhammad Luthfi | Developer Portfolio</title>
+<title>e-Portfolio | Muhammad Luthfi</title>
 
 <style>
+
 :root{
     --bg:#f5f5f7;
     --card:#ffffff;
     --text:#1d1d1f;
     --muted:#6e6e73;
     --accent:#0071e3;
-    --accent2:#00c7be;
     --border:rgba(0,0,0,0.08);
-    --shadow:0 10px 30px rgba(0,0,0,0.06);
+    --shadow:0 8px 24px rgba(0,0,0,0.06);
 }
 
 *{
@@ -24,7 +24,7 @@
 }
 
 body{
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial;
     background:var(--bg);
     color:var(--text);
     line-height:1.6;
@@ -34,88 +34,46 @@ body{
 nav{
     position:sticky;
     top:0;
+    background:rgba(245,245,247,0.8);
     backdrop-filter: blur(20px);
-    background:rgba(245,245,247,0.7);
     border-bottom:1px solid var(--border);
     display:flex;
     justify-content:space-between;
-    padding:15px 30px;
-    z-index:1000;
+    padding:14px 28px;
 }
 
 nav a{
     text-decoration:none;
     color:var(--muted);
-    margin-left:20px;
+    margin-left:18px;
     font-size:14px;
-    transition:0.2s;
 }
 
 nav a:hover{
     color:var(--accent);
 }
 
+/* CONTAINER */
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:40px 20px;
+}
+
 /* HERO */
 .hero{
-    max-width:900px;
-    margin:80px auto 40px;
     text-align:center;
-    padding:0 20px;
+    padding:60px 20px 20px;
 }
 
 .hero h1{
-    font-size:48px;
-    font-weight:600;
+    font-size:40px;
     letter-spacing:-1px;
 }
 
 .hero p{
-    font-size:18px;
     color:var(--muted);
-    margin-top:10px;
-}
-
-/* BUTTONS */
-.buttons{
-    margin-top:20px;
-}
-
-.btn{
-    display:inline-block;
-    padding:10px 18px;
-    border-radius:999px;
-    font-size:14px;
-    text-decoration:none;
-    margin:5px;
-    transition:0.2s;
-}
-
-.btn-primary{
-    background:var(--accent);
-    color:white;
-}
-
-.btn-primary:hover{
-    background:#005bb5;
-}
-
-.btn-secondary{
-    border:1px solid var(--border);
-    color:var(--text);
-    background:white;
-}
-
-/* SECTION */
-section{
-    max-width:900px;
-    margin:60px auto;
-    padding:0 20px;
-}
-
-h2{
-    font-size:22px;
-    margin-bottom:15px;
-    letter-spacing:-0.3px;
+    margin-top:8px;
 }
 
 /* CARD */
@@ -123,188 +81,169 @@ h2{
     background:var(--card);
     border:1px solid var(--border);
     border-radius:18px;
-    padding:25px;
+    padding:22px;
+    margin-bottom:20px;
     box-shadow:var(--shadow);
 }
 
-/* PROJECT */
-.project-title{
+/* SECTION TITLE */
+h2{
     font-size:20px;
+    margin:25px 0 15px;
+}
+
+/* SDG */
+.sdg{
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:999px;
+    background:rgba(0,113,227,0.1);
+    color:var(--accent);
+    font-size:13px;
     font-weight:600;
 }
 
-.tag{
-    display:inline-block;
-    font-size:12px;
-    padding:4px 10px;
-    border-radius:999px;
-    margin-top:10px;
-    background:rgba(0,113,227,0.1);
-    color:var(--accent);
-}
-
-/* GRID */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:15px;
-}
-
-.skill{
-    padding:15px;
-    border-radius:14px;
-    border:1px solid var(--border);
-    background:white;
-    font-size:14px;
-    color:var(--muted);
-}
-
-/* JOURNEY */
-.timeline{
-    border-left:2px solid var(--border);
-    padding-left:20px;
-}
-
-.step{
-    margin-bottom:20px;
-}
-
-.step strong{
-    color:var(--text);
-}
-
-/* IMAGES */
+/* LAB IMAGE */
 img{
     width:100%;
     border-radius:14px;
-    border:1px solid var(--border);
     margin-top:10px;
+    border:1px solid var(--border);
 }
 
-/* FOOTER */
+/* BUTTON */
+a.btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 14px;
+    border-radius:999px;
+    background:var(--accent);
+    color:white;
+    text-decoration:none;
+    font-size:13px;
+}
+
+a.btn:hover{
+    background:#005bb5;
+}
+
+/* LAB TITLE */
+.lab-title{
+    font-weight:600;
+    font-size:16px;
+}
+
+small{
+    color:var(--muted);
+}
+
 footer{
     text-align:center;
     padding:40px;
     color:var(--muted);
     font-size:13px;
 }
+
 </style>
 </head>
 
 <body>
 
 <nav>
-    <div><strong>Muhammad Luthfi</strong></div>
+    <div><strong>e-Portfolio</strong></div>
     <div>
-        <a href="#about">About</a>
-        <a href="#project">Project</a>
-        <a href="#skills">Tech</a>
-        <a href="#journey">Journey</a>
-        <a href="#contact">Contact</a>
+        <a href="#profile">Profile</a>
+        <a href="#labs">Labs</a>
     </div>
 </nav>
 
+<div class="container">
+
 <!-- HERO -->
 <div class="hero">
-    <h1>Mobile Application Developer</h1>
-    <p>Building Android applications focused on usability, clean UI, and real-world impact.</p>
-
-    <div class="buttons">
-        <a class="btn btn-primary" href="https://github.com/">GitHub</a>
-        <a class="btn btn-secondary" href="https://youtu.be/">Watch Demo</a>
-    </div>
+    <h1>Muhammad Luthfi bin Azanee</h1>
+    <p>Mobile Application Development e-Portfolio</p>
 </div>
 
-<!-- ABOUT -->
-<section id="about">
-    <h2>About</h2>
-    <div class="card">
-        I am Muhammad Luthfi, a software engineering student interested in
-        mobile application development. I focus on building clean, functional,
-        and user-friendly Android applications using modern development practices.
-    </div>
+<!-- PROFILE -->
+<section id="profile" class="card">
+
+    <h2>Student Profile</h2>
+
+    <p><strong>Name:</strong> Muhammad Luthfi bin Azanee</p>
+    <p><strong>Matric No:</strong> A210509</p>
+    <p><strong>Programme:</strong> Your Degree Programme</p>
+    <p><strong>Instructor:</strong> Mr. Nelson</p>
+
+    <br>
+
+    <h2>Introduction & Learning Goals</h2>
+    <p>
+        Write a short introduction about yourself here. Describe your experience learning mobile development
+        during this project and your learning goals.
+    </p>
+
+    <br>
+
+    <h2>Target SDG</h2>
+    <span class="sdg">SDG 6: Clean Water and Sanitation</span>
+    <p style="margin-top:10px;color:var(--muted);">
+        Ensuring availability and sustainable management of water and sanitation for all.
+    </p>
+
 </section>
 
-<!-- PROJECT -->
-<section id="project">
-    <h2>Featured Project</h2>
-    <div class="card">
-        <div class="project-title">HyPulse Mobile App</div>
+<!-- LABS -->
+<section id="labs">
 
-        <div class="tag">SDG 6 • Clean Water & Sanitation</div>
+<h2>Lab Submissions</h2>
 
-        <p style="margin-top:10px;color:var(--muted);">
-            A mobile application designed to provide awareness and information
-            about water quality and sustainability.
-        </p>
+<!-- LAB 1 -->
+<div class="card">
+    <div class="lab-title">Lab 1 — UI</div>
+    <img src="images/Lab 1.png">
+    <p><strong>Reflection:</strong> I learned how to make layout for my HyPulse App</p>
+    <a class="btn" href="https://youtu.be/WP9Z_yU7vYI">Watch Demo</a>
+</div>
 
-        <img src="images/Lab 5.png" alt="Project Screenshot">
+<!-- LAB 2 -->
+<div class="card">
+    <div class="lab-title">Lab 2 — Interaction</div>
+    <img src="images/Lab 2.png">
+    <p><strong>Reflection:</strong> I learned how to handle user inputs, click listeners, event handling, or dynamic state updates.</p>
+    <a class="btn" href="https://youtu.be/SFWcefCizJ0">Watch Demo</a>
+</div>
 
-        <p style="margin-top:10px;">
-            Built using Kotlin, Android Studio, Room Database, and Material Design principles.
-        </p>
-    </div>
+<!-- LAB 3 -->
+<div class="card">
+    <div class="lab-title">Lab 3 — Material Design</div>
+    <img src="images/Lab 3.png">
+    <p><strong>Reflection:</strong> I learned how to implement Material components, themes, colors, or dark mode support.</p>
+    <a class="btn" href="https://youtu.be/tFTuZEGdKZM">Watch Demo</a>
+</div>
+
+<!-- LAB 4 -->
+<div class="card">
+    <div class="lab-title">Lab 4 — Navigation</div>
+    <img src="images/Lab 4.png">
+    <p><strong>Reflection:</strong> I learned how to set up fragments, navigation graphs, tab bars, or drawer layouts.</p>
+    <a class="btn" href="https://youtu.be/wYI6vQZBcgM">Watch Demo</a>
+</div>
+
+<!-- LAB 5 -->
+<div class="card">
+    <div class="lab-title">Lab 5 — Room</div>
+    <img src="images/Lab 5.png">
+    <p><strong>Reflection:</strong> I learned how to set up local data persistence using Room Database, Entities and DAOs.</p>
+    <a class="btn" href="https://youtu.be/YDvXIu-EyYs">Watch Demo</a>
+</div>
+
 </section>
 
-<!-- SKILLS -->
-<section id="skills">
-    <h2>Tech Stack</h2>
-    <div class="grid">
-
-        <div class="skill">Kotlin</div>
-        <div class="skill">Android Studio</div>
-        <div class="skill">Room Database</div>
-        <div class="skill">Material Design</div>
-        <div class="skill">Git & GitHub</div>
-        <div class="skill">UI/UX Basics</div>
-
-    </div>
-</section>
-
-<!-- JOURNEY -->
-<section id="journey">
-    <h2>Development Journey</h2>
-    <div class="card">
-
-        <div class="timeline">
-
-            <div class="step"><strong>Lab 1</strong> — UI Design</div>
-            <div class="step"><strong>Lab 2</strong> — User Interaction</div>
-            <div class="step"><strong>Lab 3</strong> — Material Design</div>
-            <div class="step"><strong>Lab 4</strong> — Navigation</div>
-            <div class="step"><strong>Lab 5</strong> — Room Database</div>
-
-        </div>
-
-    </div>
-</section>
-
-<!-- GALLERY -->
-<section>
-    <h2>Gallery</h2>
-    <div class="grid">
-
-        <img src="images/Lab 1.png">
-        <img src="images/Lab 2.png">
-        <img src="images/Lab 3.png">
-        <img src="images/Lab 4.png">
-        <img src="images/Lab 5.png">
-
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-        <p><strong>Email:</strong> your-email@example.com</p>
-        <p><strong>GitHub:</strong> github.com/yourname</p>
-        <p><strong>LinkedIn:</strong> linkedin.com/in/yourname</p>
-    </div>
-</section>
+</div>
 
 <footer>
-    © 2026 Muhammad Luthfi — Built with a clean Apple-inspired design
+    © 2026 Muhammad Luthfi | Mobile App Development e-Portfolio
 </footer>
 
 </body>
