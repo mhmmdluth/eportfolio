@@ -1,416 +1,311 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Luthfi | e-Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Luthfi | Developer Portfolio</title>
 
-    <style>
+<style>
+:root{
+    --bg:#f5f5f7;
+    --card:#ffffff;
+    --text:#1d1d1f;
+    --muted:#6e6e73;
+    --accent:#0071e3;
+    --accent2:#00c7be;
+    --border:rgba(0,0,0,0.08);
+    --shadow:0 10px 30px rgba(0,0,0,0.06);
+}
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        :root{
-            --primary:#2563eb;
-            --secondary:#0f172a;
-            --accent:#06b6d4;
-            --bg:#f8fafc;
-            --card:#ffffff;
-            --text:#334155;
-        }
+body{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+}
 
-        body{
-            font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-            background:linear-gradient(135deg,#f8fafc,#e2e8f0);
-            color:var(--text);
-            line-height:1.7;
-        }
+/* NAV */
+nav{
+    position:sticky;
+    top:0;
+    backdrop-filter: blur(20px);
+    background:rgba(245,245,247,0.7);
+    border-bottom:1px solid var(--border);
+    display:flex;
+    justify-content:space-between;
+    padding:15px 30px;
+    z-index:1000;
+}
 
-        /* Hero */
+nav a{
+    text-decoration:none;
+    color:var(--muted);
+    margin-left:20px;
+    font-size:14px;
+    transition:0.2s;
+}
 
-        header{
-            background:linear-gradient(135deg,#2563eb,#06b6d4);
-            color:white;
-            text-align:center;
-            padding:80px 20px;
-            box-shadow:0 5px 20px rgba(0,0,0,.15);
-        }
+nav a:hover{
+    color:var(--accent);
+}
 
-        header h1{
-            font-size:3rem;
-            margin-bottom:10px;
-        }
+/* HERO */
+.hero{
+    max-width:900px;
+    margin:80px auto 40px;
+    text-align:center;
+    padding:0 20px;
+}
 
-        header p{
-            font-size:1.2rem;
-            opacity:.95;
-        }
+.hero h1{
+    font-size:48px;
+    font-weight:600;
+    letter-spacing:-1px;
+}
 
-        .container{
-            max-width:1100px;
-            margin:auto;
-            padding:40px 20px;
-        }
+.hero p{
+    font-size:18px;
+    color:var(--muted);
+    margin-top:10px;
+}
 
-        /* Cards */
+/* BUTTONS */
+.buttons{
+    margin-top:20px;
+}
 
-        .profile-card,
-        .skill-card,
-        .lab-card{
-            background:white;
-            border-radius:20px;
-            padding:30px;
-            margin-bottom:30px;
-            box-shadow:0 10px 30px rgba(0,0,0,.08);
-            transition:.3s;
-        }
+.btn{
+    display:inline-block;
+    padding:10px 18px;
+    border-radius:999px;
+    font-size:14px;
+    text-decoration:none;
+    margin:5px;
+    transition:0.2s;
+}
 
-        .profile-card:hover,
-        .skill-card:hover,
-        .lab-card:hover{
-            transform:translateY(-5px);
-            box-shadow:0 15px 35px rgba(0,0,0,.12);
-        }
+.btn-primary{
+    background:var(--accent);
+    color:white;
+}
 
-        h2{
-            color:var(--secondary);
-            margin-bottom:20px;
-        }
+.btn-primary:hover{
+    background:#005bb5;
+}
 
-        h3{
-            color:var(--primary);
-            margin-bottom:15px;
-        }
+.btn-secondary{
+    border:1px solid var(--border);
+    color:var(--text);
+    background:white;
+}
 
-        hr{
-            border:none;
-            height:2px;
-            background:linear-gradient(to right,#2563eb,#06b6d4);
-            margin:20px 0;
-        }
+/* SECTION */
+section{
+    max-width:900px;
+    margin:60px auto;
+    padding:0 20px;
+}
 
-        /* Profile */
+h2{
+    font-size:22px;
+    margin-bottom:15px;
+    letter-spacing:-0.3px;
+}
 
-        .profile{
-            text-align:center;
-        }
+/* CARD */
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+    box-shadow:var(--shadow);
+}
 
-        .avatar{
-            width:150px;
-            height:150px;
-            border-radius:50%;
-            object-fit:cover;
-            border:5px solid var(--primary);
-            margin-bottom:20px;
-        }
+/* PROJECT */
+.project-title{
+    font-size:20px;
+    font-weight:600;
+}
 
-        .sdg-badge{
-            display:inline-block;
-            margin:15px 0;
-            padding:10px 20px;
-            background:linear-gradient(135deg,#2563eb,#06b6d4);
-            color:white;
-            border-radius:50px;
-            font-weight:bold;
-        }
+.tag{
+    display:inline-block;
+    font-size:12px;
+    padding:4px 10px;
+    border-radius:999px;
+    margin-top:10px;
+    background:rgba(0,113,227,0.1);
+    color:var(--accent);
+}
 
-        /* Skills */
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
 
-        .grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-            gap:20px;
-        }
+.skill{
+    padding:15px;
+    border-radius:14px;
+    border:1px solid var(--border);
+    background:white;
+    font-size:14px;
+    color:var(--muted);
+}
 
-        .skill-box{
-            background:#f8fafc;
-            padding:20px;
-            border-radius:15px;
-            text-align:center;
-        }
+/* JOURNEY */
+.timeline{
+    border-left:2px solid var(--border);
+    padding-left:20px;
+}
 
-        /* Lab Cards */
+.step{
+    margin-bottom:20px;
+}
 
-        .lab-card{
-            border-left:6px solid var(--primary);
-        }
+.step strong{
+    color:var(--text);
+}
 
-        .screenshot{
-            width:100%;
-            height:250px;
-            object-fit:cover;
-            border-radius:15px;
-            margin-bottom:20px;
-            transition:.4s;
-            box-shadow:0 5px 15px rgba(0,0,0,.1);
-        }
+/* IMAGES */
+img{
+    width:100%;
+    border-radius:14px;
+    border:1px solid var(--border);
+    margin-top:10px;
+}
 
-        .screenshot:hover{
-            transform:scale(1.02);
-        }
-
-        .btn{
-            display:inline-block;
-            margin-top:15px;
-            padding:12px 25px;
-            text-decoration:none;
-            color:white;
-            background:linear-gradient(135deg,#2563eb,#06b6d4);
-            border-radius:50px;
-            font-weight:bold;
-            transition:.3s;
-        }
-
-        .btn:hover{
-            transform:translateY(-2px);
-            box-shadow:0 10px 20px rgba(37,99,235,.3);
-        }
-
-        footer{
-            text-align:center;
-            padding:30px;
-            color:#64748b;
-        }
-
-        @media(max-width:768px){
-
-            header h1{
-                font-size:2.2rem;
-            }
-
-            .avatar{
-                width:120px;
-                height:120px;
-            }
-
-        }
-
-    </style>
-
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:40px;
+    color:var(--muted);
+    font-size:13px;
+}
+</style>
 </head>
+
 <body>
 
-<header>
-
-    <h1>📱 Mobile Application Development</h1>
-    <p>e-Portfolio | Muhammad Luthfi bin Azanee</p>
-
-</header>
-
-<div class="container">
-
-    <!-- Profile -->
-
-    <section class="profile-card">
-
-        <div class="profile">
-
-            <!-- Replace with your image -->
-            <img src="images/profile.jpg" class="avatar" alt="Profile Picture">
-
-            <h2>Muhammad Luthfi bin Azanee</h2>
-
-            <p><strong>Matric No:</strong> A210509</p>
-            <p><strong>Programme:</strong> Bachelor Degree Programme</p>
-            <p><strong>Instructor:</strong> Mr. Nelson</p>
-
-        </div>
-
-        <hr>
-
-        <h3>Introduction & Learning Goals</h3>
-
-        <p>
-            I am passionate about software and mobile application development.
-            Throughout this course, I developed the HyPulse mobile application
-            and gained practical experience in Android development using
-            modern design principles and development tools.
-            My learning goal is to improve my programming skills and build
-            applications that can solve real-world problems.
-        </p>
-
-        <h3>Target Sustainable Development Goal (SDG)</h3>
-
-        <div class="sdg-badge">
-            SDG 6 : Clean Water and Sanitation
-        </div>
-
-        <p>
-            Ensuring availability and sustainable management
-            of water and sanitation for all.
-        </p>
-
-    </section>
-
-    <!-- Skills -->
-
-    <section class="skill-card">
-
-        <h2>Skills Gained</h2>
-
-        <div class="grid">
-
-            <div class="skill-box">
-                <h3>🎨 UI Design</h3>
-                <p>Creating attractive and responsive mobile interfaces.</p>
-            </div>
-
-            <div class="skill-box">
-                <h3>⚡ Interaction</h3>
-                <p>Handling user inputs and event-driven programming.</p>
-            </div>
-
-            <div class="skill-box">
-                <h3>🧭 Navigation</h3>
-                <p>Managing fragment navigation and user flow.</p>
-            </div>
-
-            <div class="skill-box">
-                <h3>🗄️ Room Database</h3>
-                <p>Implementing local data persistence using Room.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <h2 style="margin-bottom:20px;">Lab Submissions</h2>
-
-    <!-- Lab 1 -->
-
-    <div class="lab-card">
-
-        <h3>Lab 1 — UI</h3>
-
-        <img src="images/Lab 1.png"
-        class="screenshot"
-        alt="Lab 1">
-
-        <p>
-            <strong>Reflection:</strong>
-            I learned how to design the user interface layout
-            for my HyPulse application.
-        </p>
-
-        <a href="https://youtu.be/WP9Z_yU7vYI"
-        target="_blank"
-        class="btn">
-        📺 Watch Demo
-        </a>
-
+<nav>
+    <div><strong>Muhammad Luthfi</strong></div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#project">Project</a>
+        <a href="#skills">Tech</a>
+        <a href="#journey">Journey</a>
+        <a href="#contact">Contact</a>
     </div>
+</nav>
 
-    <!-- Lab 2 -->
+<!-- HERO -->
+<div class="hero">
+    <h1>Mobile Application Developer</h1>
+    <p>Building Android applications focused on usability, clean UI, and real-world impact.</p>
 
-    <div class="lab-card">
-
-        <h3>Lab 2 — Interaction</h3>
-
-        <img src="images/Lab 2.png"
-        class="screenshot"
-        alt="Lab 2">
-
-        <p>
-            <strong>Reflection:</strong>
-            I learned how to handle user inputs,
-            click listeners and dynamic state updates.
-        </p>
-
-        <a href="https://youtu.be/SFWcefCizJ0"
-        target="_blank"
-        class="btn">
-        📺 Watch Demo
-        </a>
-
+    <div class="buttons">
+        <a class="btn btn-primary" href="https://github.com/">GitHub</a>
+        <a class="btn btn-secondary" href="https://youtu.be/">Watch Demo</a>
     </div>
-
-    <!-- Lab 3 -->
-
-    <div class="lab-card">
-
-        <h3>Lab 3 — Material Design</h3>
-
-        <img src="images/Lab 3.png"
-        class="screenshot"
-        alt="Lab 3">
-
-        <p>
-            <strong>Reflection:</strong>
-            I learned how to implement Material Design
-            components and themes.
-        </p>
-
-        <a href="https://youtu.be/tFTuZEGdKZM"
-        target="_blank"
-        class="btn">
-        📺 Watch Demo
-        </a>
-
-    </div>
-
-    <!-- Lab 4 -->
-
-    <div class="lab-card">
-
-        <h3>Lab 4 — Navigation</h3>
-
-        <img src="images/Lab 4.png"
-        class="screenshot"
-        alt="Lab 4">
-
-        <p>
-            <strong>Reflection:</strong>
-            I learned how to create smooth navigation
-            using fragments and navigation graphs.
-        </p>
-
-        <a href="https://youtu.be/wYI6vQZBcgM"
-        target="_blank"
-        class="btn">
-        📺 Watch Demo
-        </a>
-
-    </div>
-
-    <!-- Lab 5 -->
-
-    <div class="lab-card">
-
-        <h3>Lab 5 — Room Database</h3>
-
-        <img src="images/Lab 5.png"
-        class="screenshot"
-        alt="Lab 5">
-
-        <p>
-            <strong>Reflection:</strong>
-            I learned how to implement local data storage
-            using Room Database, Entities and DAOs.
-        </p>
-
-        <a href="https://youtu.be/YDvXIu-EyYs"
-        target="_blank"
-        class="btn">
-        📺 Watch Demo
-        </a>
-
-    </div>
-
 </div>
 
+<!-- ABOUT -->
+<section id="about">
+    <h2>About</h2>
+    <div class="card">
+        I am Muhammad Luthfi, a software engineering student interested in
+        mobile application development. I focus on building clean, functional,
+        and user-friendly Android applications using modern development practices.
+    </div>
+</section>
+
+<!-- PROJECT -->
+<section id="project">
+    <h2>Featured Project</h2>
+    <div class="card">
+        <div class="project-title">HyPulse Mobile App</div>
+
+        <div class="tag">SDG 6 • Clean Water & Sanitation</div>
+
+        <p style="margin-top:10px;color:var(--muted);">
+            A mobile application designed to provide awareness and information
+            about water quality and sustainability.
+        </p>
+
+        <img src="images/Lab 5.png" alt="Project Screenshot">
+
+        <p style="margin-top:10px;">
+            Built using Kotlin, Android Studio, Room Database, and Material Design principles.
+        </p>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <h2>Tech Stack</h2>
+    <div class="grid">
+
+        <div class="skill">Kotlin</div>
+        <div class="skill">Android Studio</div>
+        <div class="skill">Room Database</div>
+        <div class="skill">Material Design</div>
+        <div class="skill">Git & GitHub</div>
+        <div class="skill">UI/UX Basics</div>
+
+    </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+    <h2>Development Journey</h2>
+    <div class="card">
+
+        <div class="timeline">
+
+            <div class="step"><strong>Lab 1</strong> — UI Design</div>
+            <div class="step"><strong>Lab 2</strong> — User Interaction</div>
+            <div class="step"><strong>Lab 3</strong> — Material Design</div>
+            <div class="step"><strong>Lab 4</strong> — Navigation</div>
+            <div class="step"><strong>Lab 5</strong> — Room Database</div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section>
+    <h2>Gallery</h2>
+    <div class="grid">
+
+        <img src="images/Lab 1.png">
+        <img src="images/Lab 2.png">
+        <img src="images/Lab 3.png">
+        <img src="images/Lab 4.png">
+        <img src="images/Lab 5.png">
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+        <p><strong>Email:</strong> your-email@example.com</p>
+        <p><strong>GitHub:</strong> github.com/yourname</p>
+        <p><strong>LinkedIn:</strong> linkedin.com/in/yourname</p>
+    </div>
+</section>
+
 <footer>
-
-    <p>
-        © 2026 Muhammad Luthfi bin Azanee |
-        Mobile Application Development e-Portfolio
-    </p>
-
+    © 2026 Muhammad Luthfi — Built with a clean Apple-inspired design
 </footer>
 
 </body>
 </html>
-```
