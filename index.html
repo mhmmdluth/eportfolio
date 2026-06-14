@@ -1,184 +1,416 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Project 2 e-Portfolio</title>
+    <title>Muhammad Luthfi | e-Portfolio</title>
+
     <style>
-        :root {
-            --primary-color: #24292e;
-            --accent-color: #0366d6;
-            --bg-color: #f6f8fa;
-            --card-bg: #ffffff;
-            --text-color: #2f363d;
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 0;
+        :root{
+            --primary:#2563eb;
+            --secondary:#0f172a;
+            --accent:#06b6d4;
+            --bg:#f8fafc;
+            --card:#ffffff;
+            --text:#334155;
         }
 
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
+        body{
+            font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+            background:linear-gradient(135deg,#f8fafc,#e2e8f0);
+            color:var(--text);
+            line-height:1.7;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+        /* Hero */
+
+        header{
+            background:linear-gradient(135deg,#2563eb,#06b6d4);
+            color:white;
+            text-align:center;
+            padding:80px 20px;
+            box-shadow:0 5px 20px rgba(0,0,0,.15);
         }
 
-        .profile-card, .lab-card {
-            background: var(--card-bg);
-            border: 1px solid #e1e4e8;
-            border-radius: 6px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        header h1{
+            font-size:3rem;
+            margin-bottom:10px;
         }
 
-        h1, h2, h3 {
-            color: var(--primary-color);
-            margin-top: 0;
+        header p{
+            font-size:1.2rem;
+            opacity:.95;
         }
 
-        header h1 {
-            color: white;
-            margin-bottom: 0.5rem;
+        .container{
+            max-width:1100px;
+            margin:auto;
+            padding:40px 20px;
         }
 
-        .sdg-badge {
-            background-color: #e1f5fe;
-            color: #0288d1;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            display: inline-block;
-            font-weight: bold;
-            margin-top: 0.5rem;
+        /* Cards */
+
+        .profile-card,
+        .skill-card,
+        .lab-card{
+            background:white;
+            border-radius:20px;
+            padding:30px;
+            margin-bottom:30px;
+            box-shadow:0 10px 30px rgba(0,0,0,.08);
+            transition:.3s;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin: 1rem 0;
+        .profile-card:hover,
+        .skill-card:hover,
+        .lab-card:hover{
+            transform:translateY(-5px);
+            box-shadow:0 15px 35px rgba(0,0,0,.12);
         }
 
-        .screenshot {
-            width: 100%;
-            border-radius: 4px;
-            border: 1px solid #e1e4e8;
-            object-fit: cover;
-            height: 200px;
+        h2{
+            color:var(--secondary);
+            margin-bottom:20px;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: background 0.2s;
+        h3{
+            color:var(--primary);
+            margin-bottom:15px;
         }
 
-        .btn:hover {
-            background-color: #024ea4;
+        hr{
+            border:none;
+            height:2px;
+            background:linear-gradient(to right,#2563eb,#06b6d4);
+            margin:20px 0;
         }
 
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #586069;
-            font-size: 0.9rem;
+        /* Profile */
+
+        .profile{
+            text-align:center;
         }
+
+        .avatar{
+            width:150px;
+            height:150px;
+            border-radius:50%;
+            object-fit:cover;
+            border:5px solid var(--primary);
+            margin-bottom:20px;
+        }
+
+        .sdg-badge{
+            display:inline-block;
+            margin:15px 0;
+            padding:10px 20px;
+            background:linear-gradient(135deg,#2563eb,#06b6d4);
+            color:white;
+            border-radius:50px;
+            font-weight:bold;
+        }
+
+        /* Skills */
+
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:20px;
+        }
+
+        .skill-box{
+            background:#f8fafc;
+            padding:20px;
+            border-radius:15px;
+            text-align:center;
+        }
+
+        /* Lab Cards */
+
+        .lab-card{
+            border-left:6px solid var(--primary);
+        }
+
+        .screenshot{
+            width:100%;
+            height:250px;
+            object-fit:cover;
+            border-radius:15px;
+            margin-bottom:20px;
+            transition:.4s;
+            box-shadow:0 5px 15px rgba(0,0,0,.1);
+        }
+
+        .screenshot:hover{
+            transform:scale(1.02);
+        }
+
+        .btn{
+            display:inline-block;
+            margin-top:15px;
+            padding:12px 25px;
+            text-decoration:none;
+            color:white;
+            background:linear-gradient(135deg,#2563eb,#06b6d4);
+            border-radius:50px;
+            font-weight:bold;
+            transition:.3s;
+        }
+
+        .btn:hover{
+            transform:translateY(-2px);
+            box-shadow:0 10px 20px rgba(37,99,235,.3);
+        }
+
+        footer{
+            text-align:center;
+            padding:30px;
+            color:#64748b;
+        }
+
+        @media(max-width:768px){
+
+            header h1{
+                font-size:2.2rem;
+            }
+
+            .avatar{
+                width:120px;
+                height:120px;
+            }
+
+        }
+
     </style>
+
 </head>
 <body>
 
-    <header>
-        <h1>e-Portfolio</h1>
-        <p>Showcasing Mobile Application Development Labs</p>
-    </header>
+<header>
 
-    <div class="container">
+    <h1>📱 Mobile Application Development</h1>
+    <p>e-Portfolio | Muhammad Luthfi bin Azanee</p>
 
-        <section class="profile-card">
-            <h2>Student Profile</h2>
-            <hr>
-            <p><strong>Name:</strong> Muhammad Luthfi bin Azanee</p>
+</header>
+
+<div class="container">
+
+    <!-- Profile -->
+
+    <section class="profile-card">
+
+        <div class="profile">
+
+            <!-- Replace with your image -->
+            <img src="images/profile.jpg" class="avatar" alt="Profile Picture">
+
+            <h2>Muhammad Luthfi bin Azanee</h2>
+
             <p><strong>Matric No:</strong> A210509</p>
-            <p><strong>Programme:</strong> Your Degree Programme</p>
+            <p><strong>Programme:</strong> Bachelor Degree Programme</p>
             <p><strong>Instructor:</strong> Mr. Nelson</p>
-            
-            <h3>Introduction & Learning Goals</h3>
-            <p>Write a short introduction about yourself here. Describe your experience learning mobile development during this project and what your core learning goals were.</p>
-            
-            <h3>Target Sustainable Development Goal (SDG)</h3>
-            <div class="sdg-badge">SDG 6: Clean Water and Sanitation</div>
-            <p><em>Ensuring availability and sustainable management of water and sanitation for all</em></p>
-        </section>
 
-        <h2>Lab Submissions</h2>
-
-        <div class="lab-card">
-            <h3>Lab 1 — UI</h3>
-            <div class="grid">
-                <img src="images/Lab 1.png" alt="Lab 2 Screenshot 1" class="screenshot">
-            </div>
-            <p><strong>Reflection:</strong> I learned how to make layout for my HyPulse App</p>
-            <a href="https://youtu.be/WP9Z_yU7vYI" target="_blank" class="btn">📺 Watch Lab 1 Demo</a>
         </div>
 
-        <div class="lab-card">
-            <h3>Lab 2 — Interaction</h3>
-            <div class="grid">
-                <img src="images/Lab 2.png" alt="Lab 2 Screenshot 1" class="screenshot">
-            </div>
-            <p><strong>Reflection:</strong> I learned how to handled user inputs, click listeners, event handling, or dynamic state updates.</p>
-            <a href="https://youtu.be/SFWcefCizJ0" target="_blank" class="btn">📺 Watch Lab 2 Demo</a>
+        <hr>
+
+        <h3>Introduction & Learning Goals</h3>
+
+        <p>
+            I am passionate about software and mobile application development.
+            Throughout this course, I developed the HyPulse mobile application
+            and gained practical experience in Android development using
+            modern design principles and development tools.
+            My learning goal is to improve my programming skills and build
+            applications that can solve real-world problems.
+        </p>
+
+        <h3>Target Sustainable Development Goal (SDG)</h3>
+
+        <div class="sdg-badge">
+            SDG 6 : Clean Water and Sanitation
         </div>
 
-        <div class="lab-card">
-            <h3>Lab 3 — Material Design</h3>
-            <div class="grid">
-                <img src="images/Lab 3.png" alt="Lab 3 Screenshot 1" class="screenshot">
+        <p>
+            Ensuring availability and sustainable management
+            of water and sanitation for all.
+        </p>
+
+    </section>
+
+    <!-- Skills -->
+
+    <section class="skill-card">
+
+        <h2>Skills Gained</h2>
+
+        <div class="grid">
+
+            <div class="skill-box">
+                <h3>🎨 UI Design</h3>
+                <p>Creating attractive and responsive mobile interfaces.</p>
             </div>
-            <p><strong>Reflection:</strong> I learned how to implement Material components (Cards, Buttons, Toolbars), themes, colors, or dark mode support.</p>
-            <a href="https://youtu.be/tFTuZEGdKZM" target="_blank" class="btn">📺 Watch Lab 3 Demo</a>
+
+            <div class="skill-box">
+                <h3>⚡ Interaction</h3>
+                <p>Handling user inputs and event-driven programming.</p>
+            </div>
+
+            <div class="skill-box">
+                <h3>🧭 Navigation</h3>
+                <p>Managing fragment navigation and user flow.</p>
+            </div>
+
+            <div class="skill-box">
+                <h3>🗄️ Room Database</h3>
+                <p>Implementing local data persistence using Room.</p>
+            </div>
+
         </div>
 
-        <div class="lab-card">
-            <h3>Lab 4 — Navigation</h3>
-            <div class="grid">
-                <img src="images/Lab 4.png" alt="Lab 4 Screenshot 1" class="screenshot">
-            </div>
-            <p><strong>Reflection:</strong> I learned how you set up fragments, navigation graphs, tab bars, or drawer layouts to guide users through the app smoothly.</p>
-            <a href="https://youtu.be/wYI6vQZBcgM" target="_blank" class="btn">📺 Watch Lab 4 Demo</a>
-        </div>
+    </section>
 
-        <div class="lab-card">
-            <h3>Lab 5 — Room</h3>
-            <div class="grid">
-                <img src="images/Lab 5.png" alt="Lab 5 Screenshot 1" class="screenshot">
-            </div>
-            <p><strong>Reflection:</strong> I learned how to set up local data persistence using Room Database, Entities and DAOs</p>
-            <a href="https://youtu.be/YDvXIu-EyYs" target="_blank" class="btn">📺 Watch Lab 5 Demo</a>
-        </div>
+    <h2 style="margin-bottom:20px;">Lab Submissions</h2>
+
+    <!-- Lab 1 -->
+
+    <div class="lab-card">
+
+        <h3>Lab 1 — UI</h3>
+
+        <img src="images/Lab 1.png"
+        class="screenshot"
+        alt="Lab 1">
+
+        <p>
+            <strong>Reflection:</strong>
+            I learned how to design the user interface layout
+            for my HyPulse application.
+        </p>
+
+        <a href="https://youtu.be/WP9Z_yU7vYI"
+        target="_blank"
+        class="btn">
+        📺 Watch Demo
+        </a>
 
     </div>
 
-    <footer>
-        <p>&copy; 2026 | e-Portfolio Submission</p>
-    </footer>
+    <!-- Lab 2 -->
+
+    <div class="lab-card">
+
+        <h3>Lab 2 — Interaction</h3>
+
+        <img src="images/Lab 2.png"
+        class="screenshot"
+        alt="Lab 2">
+
+        <p>
+            <strong>Reflection:</strong>
+            I learned how to handle user inputs,
+            click listeners and dynamic state updates.
+        </p>
+
+        <a href="https://youtu.be/SFWcefCizJ0"
+        target="_blank"
+        class="btn">
+        📺 Watch Demo
+        </a>
+
+    </div>
+
+    <!-- Lab 3 -->
+
+    <div class="lab-card">
+
+        <h3>Lab 3 — Material Design</h3>
+
+        <img src="images/Lab 3.png"
+        class="screenshot"
+        alt="Lab 3">
+
+        <p>
+            <strong>Reflection:</strong>
+            I learned how to implement Material Design
+            components and themes.
+        </p>
+
+        <a href="https://youtu.be/tFTuZEGdKZM"
+        target="_blank"
+        class="btn">
+        📺 Watch Demo
+        </a>
+
+    </div>
+
+    <!-- Lab 4 -->
+
+    <div class="lab-card">
+
+        <h3>Lab 4 — Navigation</h3>
+
+        <img src="images/Lab 4.png"
+        class="screenshot"
+        alt="Lab 4">
+
+        <p>
+            <strong>Reflection:</strong>
+            I learned how to create smooth navigation
+            using fragments and navigation graphs.
+        </p>
+
+        <a href="https://youtu.be/wYI6vQZBcgM"
+        target="_blank"
+        class="btn">
+        📺 Watch Demo
+        </a>
+
+    </div>
+
+    <!-- Lab 5 -->
+
+    <div class="lab-card">
+
+        <h3>Lab 5 — Room Database</h3>
+
+        <img src="images/Lab 5.png"
+        class="screenshot"
+        alt="Lab 5">
+
+        <p>
+            <strong>Reflection:</strong>
+            I learned how to implement local data storage
+            using Room Database, Entities and DAOs.
+        </p>
+
+        <a href="https://youtu.be/YDvXIu-EyYs"
+        target="_blank"
+        class="btn">
+        📺 Watch Demo
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+
+    <p>
+        © 2026 Muhammad Luthfi bin Azanee |
+        Mobile Application Development e-Portfolio
+    </p>
+
+</footer>
 
 </body>
 </html>
+```
